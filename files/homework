@@ -1,0 +1,33 @@
+Creati o interfata ShopItem
+   String name()
+   int price()
+   Category category()
+
+Category este un enum: ON_SALE, NEW, REFURBISHED
+
+Creati implementarile:
+Clothes
+Electronics
+Fruits
+
+Creati un Shop GENERIC care are o lista de obiecte care implementeaza ShopItem
+
+definitia clasei Shop care lucreaza doar cu ShopItem este:
+public class Shop<T extends ShopItem>
+
+astfel obiectele din T vor putea accesa metodele din ShopItem.
+(de exemplu getCategory pt findByCategory)
+
+odata creat Shop-ul, va primi doar elemente de acel tip.
+
+Shop<Clothes> va avea doar haine
+
+Shop are urmatoarele metode:
+addItem(T item)
+findByCategory(Category cat): List<T>
+findWithLowerPrice(int maxPrice) : List<T>
+findByName(String name) : Optional<T>
+removeItem(String name): Optional<T>
+
+ExtraMile: adaugati si alte metode relevante
+
